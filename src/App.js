@@ -4,7 +4,7 @@ class TodoList extends Component {
   constructor(){
     super()
     this.state={
-      todos: [],
+      // todos: [],
       currentToDo: "",
     }
   }
@@ -15,8 +15,10 @@ class TodoList extends Component {
     event.preventDefault();
     console.log("addItem Method fired");
     this.setState({
-      todos:(this._inputElement.value)
+      currentToDo:this._inputElement.value,
+      // todo: this.state.currentToDo
     })
+    
   }
   render(){
     return (
@@ -29,7 +31,7 @@ class TodoList extends Component {
           <button type="submit">Submit</button>
         </form>
         </div>
-          {this.state.todos}
+          {this.state.currentToDo}
       </div>
     )
   }
